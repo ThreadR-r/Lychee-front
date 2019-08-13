@@ -245,11 +245,11 @@ album.add = function (IDs = null, callback = null) {
 
 		let params = {
 			title: data.title,
-			parent_id: 0
+			parent_id: -1
 		};
 
 		if (visible.albums()) {
-			params.parent_id = 0;
+			params.parent_id = -1;
 		} else if (visible.album()) {
 			params.parent_id = album.json.id;
 		} else if (visible.photo()) {

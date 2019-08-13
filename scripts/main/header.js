@@ -53,7 +53,7 @@ header.bind = function() {
 	header.dom('#button_archive')     .on(eventName, function() { album.getArchive([ album.getID() ]) });
 	header.dom('#button_star')        .on(eventName, function() { photo.setStar([ photo.getID() ]) });
 	header.dom('#button_back_home')   .on(eventName, function() {
-		if (!album.json.parent_id) {
+		if (!album.json.parent_id || album.json.parent_id == '-1') {
 			lychee.goto();
 		} else {
 			lychee.goto(album.getParent());

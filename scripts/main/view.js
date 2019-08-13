@@ -68,7 +68,7 @@ view.albums = {
 			if (albums.json.albums && albums.json.albums.length !== 0) {
 
 				$.each(albums.json.albums, function () {
-					if (!this.parent_id || this.parent_id === 0) {
+					if (!this.parent_id || this.parent_id === 0 || this.parent_id === '-1') {
 						albums.parse(this);
 						albumsData += build.album(this)
 					}
